@@ -1,6 +1,6 @@
 ---
 variables:
-  PROJECT_DIR: Elders.Cronus.AtomicAction.Redis
+  PROJECT_DIR: One.Inception.AtomicAction.Redis
 
 trigger:
   branches:

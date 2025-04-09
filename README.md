@@ -1,5 +1,5 @@
-# Cronus.AtomicAction.Redis
-An implementation of `Cronus.AtomicAction` using distributed locks with Redis
+# One.Inception.AtomicAction.Redis
+An implementation of `1nception.AtomicAction` using distributed locks with Redis
 
 (*Source:* https://redis.io/topics/distlock)
 

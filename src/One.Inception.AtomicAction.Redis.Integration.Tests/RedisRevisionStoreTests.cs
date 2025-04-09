@@ -1,9 +1,9 @@
-﻿using Elders.Cronus.AtomicAction.Redis.Config;
-using Elders.Cronus.AtomicAction.Redis.RevisionStore;
+﻿using One.Inception.AtomicAction.Redis.Config;
+using One.Inception.AtomicAction.Redis.RevisionStore;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 
-namespace Elders.Cronus.AtomicAction.Redis.Integration.Tests;
+namespace One.Inception.AtomicAction.Redis.Integration.Tests;
 
 [TestFixture]
 public class RedisRevisionStoreTests

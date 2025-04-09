@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Elders.Cronus.AtomicAction.Redis\Elders.Cronus.AtomicAction.Redis.csproj" />
+    <ProjectReference Include="..\One.Inception.AtomicAction.Redis\One.Inception.AtomicAction.Redis.csproj" />
   </ItemGroup>
 
 </Project>

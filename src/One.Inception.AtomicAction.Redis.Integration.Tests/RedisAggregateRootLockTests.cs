@@ -1,10 +1,10 @@
-using Elders.Cronus.AtomicAction.Redis.AggregateRootLock;
+using One.Inception.AtomicAction.Redis.AggregateRootLock;
 using Elders.RedLock;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 
-namespace Elders.Cronus.AtomicAction.Redis.Integration.Tests;
+namespace One.Inception.AtomicAction.Redis.Integration.Tests;
 
 [TestFixture]
 public class RedisAggregateRootLockTests
