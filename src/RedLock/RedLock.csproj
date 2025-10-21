@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <!--Nuget-->
+  <PropertyGroup>
+    <PackageId>RedLock</PackageId>
+
+    <Product>RedLock</Product>
+    <Title>RedLock</Title>
+    <Description>RedLock</Description>
+    <PackageTags>distributed lock redis redlock cronus</PackageTags>
+
+    <Copyright>Copyright © Elders OSS 2013-2025</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RequireLicenseAcceptance>true</RequireLicenseAcceptance>
+
+    <ReleaseNotes>https://github.com/Elders/RedLock/blob/migrate-to-dotnet6/CHANGELOG.md</ReleaseNotes>
+    <RepositoryUrl>https://github.com/Elders/RedLock.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Elders/RedLock</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <AssemblyName>Elders.RedLock</AssemblyName>
+    <RootNamespace>Elders.RedLock</RootNamespace>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.0-rc.2.25502.107" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.0-rc.2.25502.107" />
+    <PackageReference Include="StackExchange.Redis" Version="2.9.32" />
+  </ItemGroup>
+</Project>
