@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\One.Inception.AtomicAction.Redis\One.Inception.AtomicAction.Redis.csproj" />
+    <ProjectReference Include="..\RedLock\RedLock.csproj" />
   </ItemGroup>
 
   <ItemGroup>
