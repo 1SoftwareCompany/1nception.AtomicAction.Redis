@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!--Everything used here must also be added to 1nception.AtomicAction.Redis to ensure references resolve after you pack it.-->
+
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.0-rc.2.25502.107" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.0-rc.2.25502.107" />
     <PackageReference Include="StackExchange.Redis" Version="2.9.32" />
