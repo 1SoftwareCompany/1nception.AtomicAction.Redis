@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.11116.177 d18.0
+VisualStudioVersion = 18.0.11116.177
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "One.Inception.AtomicAction.Redis", "One.Inception.AtomicAction.Redis\One.Inception.AtomicAction.Redis.csproj", "{5486073C-6747-439F-93DB-678A7F59E34D}"
 EndProject
@@ -13,8 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{F3CB34C7-8B2
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "One.Inception.AtomicAction.Redis.Integration.Tests", "One.Inception.AtomicAction.Redis.Integration.Tests\One.Inception.AtomicAction.Redis.Integration.Tests.csproj", "{51BF8FE1-DA33-43B9-AC7A-894F3955CEC9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedLock", "RedLock\RedLock.csproj", "{6C6A35E1-0A6C-8EB4-7B4A-6FAAD77C6528}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +32,6 @@ Global
 		{51BF8FE1-DA33-43B9-AC7A-894F3955CEC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51BF8FE1-DA33-43B9-AC7A-894F3955CEC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51BF8FE1-DA33-43B9-AC7A-894F3955CEC9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C6A35E1-0A6C-8EB4-7B4A-6FAAD77C6528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C6A35E1-0A6C-8EB4-7B4A-6FAAD77C6528}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C6A35E1-0A6C-8EB4-7B4A-6FAAD77C6528}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C6A35E1-0A6C-8EB4-7B4A-6FAAD77C6528}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
