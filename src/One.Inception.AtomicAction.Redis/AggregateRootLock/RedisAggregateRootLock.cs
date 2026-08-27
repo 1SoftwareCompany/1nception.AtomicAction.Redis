@@ -26,7 +26,7 @@ public sealed class RedisAggregateRootLock : ILock
     {
         if (string.IsNullOrEmpty(resource)) throw new ArgumentNullException(nameof(resource));
 
-        return lockManager.LockAsync(resource, ttl);
+        return lockManager.LockAndWaitAsync(resource, ttl);
     }
 
     public Task UnlockAsync(string resource)
