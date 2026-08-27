@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Elders.RedLock;
 using Microsoft.Extensions.Configuration;
+using One.AtomicAction;
 
 namespace One.Inception.AtomicAction.Redis.Config;
 
@@ -36,11 +36,11 @@ internal class RedisAtomicActionOptionsProvider : InceptionOptionsProviderBase<R
     }
 }
 
-internal class AtomicActionRedLockOptionsProvider : InceptionOptionsProviderBase<RedLockOptions>
+internal class AtomicActionRedLockOptionsProvider : InceptionOptionsProviderBase<AtomicActionOptions>
 {
     public AtomicActionRedLockOptionsProvider(IConfiguration configuration) : base(configuration) { }
 
-    public override void Configure(RedLockOptions options)
+    public override void Configure(AtomicActionOptions options)
     {
         configuration.GetSection("Inception:atomicaction:redis").Bind(options);
     }

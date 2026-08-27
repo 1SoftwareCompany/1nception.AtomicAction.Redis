@@ -68,6 +68,8 @@ internal sealed class RedisRevisionStore : IRevisionStore, IDisposable
             {
                 var configurationOptions = ConfigurationOptions.Parse(options.ConnectionString);
                 connectionDoNotUse = await ConnectionMultiplexer.ConnectAsync(configurationOptions);
+
+                AttatchErrorEvents(connectionDoNotUse);
             }
             catch (Exception ex)
             {
@@ -90,4 +92,18 @@ internal sealed class RedisRevisionStore : IRevisionStore, IDisposable
 
     private string CreateRedisRevisionKey(string resource) => $"rev:{resource}";
 
+    private void AttatchErrorEvents(IConnectionMultiplexer mux)
+    {
+        mux.ConnectionFailed += (_, e) =>
+            logger.LogError(e?.Exception, $"Redis ConnectionFailed. FailureType={e?.FailureType} ConnectionType={e?.ConnectionType}");
+
+        mux.ConnectionRestored += (_, e) =>
+            logger.LogWarning($"Redis ConnectionRestored. FailureType={e?.FailureType} ConnectionType={e?.ConnectionType}");
+
+        mux.InternalError += (_, e) =>
+            logger.LogError(e.Exception, $"Redis InternalError. Origin={e?.Origin} ConnectionType={e?.ConnectionType}");
+
+        mux.ErrorMessage += (_, e) =>
+            logger.LogError($"Redis server error. Message={e.Message}");
+    }
 }

@@ -1,21 +1,21 @@
 using One.Inception.AtomicAction.Redis.AggregateRootLock;
-using Elders.RedLock;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
+using One.AtomicAction;
 
 namespace One.Inception.AtomicAction.Redis.Integration.Tests;
 
 [TestFixture]
 public class RedisAggregateRootLockTests
 {
-    RedisLockManager lockManager;
+    AtomicActionManager lockManager;
     RedisAggregateRootLock rootLock;
 
     [SetUp]
     public void Setup()
     {
-        lockManager = new RedisLockManager(new RedisOptions(RedisFixture.Container.GetConnectionString()), new NullLoggerFactory().CreateLogger<RedisLockManager>());
+        lockManager = new AtomicActionManager(new RedisOptions(RedisFixture.Container.GetConnectionString()), new NullLoggerFactory().CreateLogger<AtomicActionManager>());
         rootLock = new RedisAggregateRootLock(lockManager);
     }
 
@@ -66,7 +66,7 @@ public class RedisAggregateRootLockTests
     }
 }
 
-file sealed class RedisOptions : IOptionsMonitor<RedLockOptions>, IDisposable
+file sealed class RedisOptions : IOptionsMonitor<AtomicActionOptions>, IDisposable
 {
     private readonly string connectionString;
 
@@ -75,19 +75,19 @@ file sealed class RedisOptions : IOptionsMonitor<RedLockOptions>, IDisposable
         this.connectionString = connectionString;
     }
 
-    public RedLockOptions CurrentValue => new()
+    public AtomicActionOptions CurrentValue => new()
     {
         ConnectionString = connectionString
     };
 
     public void Dispose() { }
 
-    public RedLockOptions Get(string name)
+    public AtomicActionOptions Get(string name)
     {
         return CurrentValue;
     }
 
-    public IDisposable OnChange(Action<RedLockOptions, string> listener)
+    public IDisposable OnChange(Action<AtomicActionOptions, string> listener)
     {
         listener(CurrentValue, null);
         return this;

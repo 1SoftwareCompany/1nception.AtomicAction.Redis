@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Elders.RedLock;
+using One.AtomicAction;
 
 namespace One.Inception.AtomicAction.Redis.AggregateRootLock;
 
 public sealed class RedisAggregateRootLock : ILock
 {
-    private readonly IRedisLockManager lockManager;
+    private readonly IAtomicActionManager lockManager;
 
-    public RedisAggregateRootLock(IRedisLockManager lockManager)
+    public RedisAggregateRootLock(IAtomicActionManager lockManager)
     {
         if (lockManager is null) throw new ArgumentNullException(nameof(lockManager));
 

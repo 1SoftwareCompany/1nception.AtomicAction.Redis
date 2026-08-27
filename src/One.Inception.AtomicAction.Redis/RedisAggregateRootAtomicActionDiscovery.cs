@@ -2,8 +2,8 @@
 using One.Inception.AtomicAction.Redis.Config;
 using One.Inception.AtomicAction.Redis.RevisionStore;
 using One.Inception.Discoveries;
-using Elders.RedLock;
 using Microsoft.Extensions.DependencyInjection;
+using One.AtomicAction;
 
 namespace One.Inception.AtomicAction.Redis;
 
@@ -12,7 +12,7 @@ public class RedisAggregateRootAtomicActionDiscovery : DiscoveryBase<IAggregateR
     protected override DiscoveryResult<IAggregateRootAtomicAction> DiscoverFromAssemblies(DiscoveryContext context)
     {
         return new DiscoveryResult<IAggregateRootAtomicAction>(GetModels(context), services => services
-            .AddRedLock<AtomicActionRedLockOptionsProvider>()
+            .AddAtomicAction<AtomicActionRedLockOptionsProvider>()
             .AddOptions<RedisAtomicActionOptions, RedisAtomicActionOptionsProvider>());
     }
 
