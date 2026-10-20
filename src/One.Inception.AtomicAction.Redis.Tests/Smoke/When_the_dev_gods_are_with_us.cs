@@ -13,7 +13,7 @@ public class When_the_dev_gods_are_with_us
 {
     Establish context = async () =>
     {
-        id = new TestId();
+        id = new AtomicActionResource("volumes", new TestId());
         lockManager = A.Fake<ILock>();
         A.CallTo(() => lockManager.LockAsync(A<string>._, A<TimeSpan>._)).Returns(true);
 
@@ -38,7 +38,7 @@ public class When_the_dev_gods_are_with_us
     It should_try_to_unlock_the_mutex = () => A.CallTo(() => lockManager.UnlockAsync(id.Value)).MustHaveHappened();
 
     static int revision = 2;
-    static TestId id;
+    static AtomicActionResource id;
     static ILock lockManager;
     static IRevisionStore revisionStore;
     static IAggregateRootAtomicAction service;

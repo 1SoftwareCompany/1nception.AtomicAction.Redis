@@ -25,9 +25,9 @@ public class RedisAggregateRootAtomicAction : IAggregateRootAtomicAction
         this.options = options.CurrentValue;
     }
 
-    public async Task<Result<bool>> ExecuteAsync(AggregateRootId arId, int aggregateRootRevision, Func<Task> action)
+    public async Task<Result<bool>> ExecuteAsync(AtomicActionResource atomicActionResource, int aggregateRootRevision, Func<Task> action)
     {
-        string resource = arId.Value;
+        string resource = atomicActionResource.Value;
 
         bool isArLocked = await aggregateRootLock.LockAsync(resource, options.LockTtl).ConfigureAwait(false);
         if (isArLocked)
