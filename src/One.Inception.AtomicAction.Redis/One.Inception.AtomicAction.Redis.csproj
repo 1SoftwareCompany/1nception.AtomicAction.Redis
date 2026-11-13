@@ -24,15 +24,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="1nception" Version="13.2.10" />
+    <PackageReference Include="1nception" Version="14.0.0" />
 
-    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.15" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.15" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="11.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="11.0.0" />
     <PackageReference Include="One.AtomicAction" Version="2.0.11" />
-    <PackageReference Include="StackExchange.Redis" Version="2.11.8" />
+    <PackageReference Include="StackExchange.Redis" Version="3.4.35" />
   </ItemGroup>
 
   <ItemGroup>
     <InternalsVisibleTo Include="One.Inception.AtomicAction.Redis.Integration.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="11.0.100" />
   </ItemGroup>
 </Project>
